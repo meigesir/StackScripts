@@ -11,3 +11,7 @@ mysql_install "$DB_PASSWORD"
 mysql_create_database "$DB_PASSWORD" "$DB_NAME"
 mysql_create_user "$DB_PASSWORD" "$DB_USER" "$DB_USER_PASSWORD"
 mysql_grant_user "$DB_PASSWORD" "$DB_USER" "$DB_NAME"
+
+java_install
+
+tomcat_install
