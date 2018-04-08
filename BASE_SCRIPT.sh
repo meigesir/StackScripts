@@ -131,7 +131,7 @@ function java_install {
 ###########################################################
 
 function tomcat_install {
-  wget http://mirror.olnevhost.net/pub/apache/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz
+  wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz
 
   sudo mkdir /opt/tomcat
 
