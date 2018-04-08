@@ -137,7 +137,7 @@ function tomcat_install {
 
   sudo tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
 
-  sed -i 's/port="8080"/port="80"/' /opt/tomcat/conf/server.xml
+  # sed -i 's/port="8080"/port="80"/' /opt/tomcat/conf/server.xml
 
   # boot
   cur_dir="$pwd"
@@ -146,4 +146,44 @@ function tomcat_install {
   cd $cur_dir
 
   # ./shutdown.sh
+}
+
+###########################################################
+# Nginx
+# reference 
+#https://segmentfault.com/a/1190000007803704
+#https://www.hugeserver.com/kb/install-nginx-page-speed-centos/
+###########################################################
+
+function nginx_install {
+  
+  yum  -y install gcc
+  
+  yum -y install pcre-devel openssl openssl-devel
+  
+  wget https://nginx.org/download/nginx-1.12.2.tar.gz
+
+  sudo mkdir /usr/local/nginx
+  sudo mkdir nginx-1.12.2
+
+  sudo tar zxvf nginx-1.12.2.tar.gz
+
+  cur_dir="$pwd"
+
+  cd nginx-1.12.2
+
+  ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module
+  make && make install
+
+  # When the installation process is finished you have to create Nginx symlinks:
+  ln -s /usr/local/nginx/conf/ /etc/nginx
+  ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+  
+  cd ..
+  rm -rf nginx-1.*
+
+  # boot
+  /usr/sbin/nginx
+
+  cd $cur_dir
 }
