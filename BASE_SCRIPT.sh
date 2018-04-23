@@ -187,3 +187,34 @@ function nginx_install {
 
   cd $cur_dir
 }
+
+###########################################################
+# Redis
+# reference https://linode.com/docs/databases/redis/install-and-configure-redis-on-centos-7/
+###########################################################
+
+function redis_install {
+
+  # Install Redis:
+  sudo yum -y install redis
+
+  # Start Redis:
+  sudo systemctl start redis
+
+  # Optional: To automatically start Redis on boot:
+  sudo systemctl enable redis
+
+  # Configure Redis
+
+  ## Persistence Options
+  cat <<EOT >> /etc/redis.conf
+appendonly yes
+appendfsync everysec
+EOT
+
+  sudo systemctl restart redis
+
+  ## Basic System Tuning
+  sudo echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
+
+}
