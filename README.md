@@ -8,3 +8,4 @@ Java 环境的配置
 * mysql: mysql-community-release-el7-5
 * nginx: 1.12.2
 
+Redis 环境的配置
