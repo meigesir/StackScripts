@@ -216,5 +216,12 @@ EOT
 
   ## Basic System Tuning
   sudo echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
+  
+  ##Use Password Authentication
+  ## https://linode.com/docs/databases/redis/install-and-configure-redis-on-centos-7/#use-password-authentication
+  ## /etc/redis.conf
+  ## requirepass master_password
+  ## Start Redis:
+  ## sudo systemctl start redis
 
 }
