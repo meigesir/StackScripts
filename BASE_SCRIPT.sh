@@ -39,6 +39,7 @@ function system_update {
     # EPEL repo
     yes y | sudo yum install epel-release
     yes y | yum install wget
+    yes y | yum install unzip
 }
 
 ###########################################################
@@ -170,7 +171,7 @@ function nginx_install {
   
   wget https://github.com/yaoweibin/nginx_upstream_check_module/archive/master.zip
   
-  sudo tar zxvf master.zip
+  sudo unzip master.zip
   
   cur_dir="$pwd"
 
