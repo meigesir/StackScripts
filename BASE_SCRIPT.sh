@@ -167,12 +167,18 @@ function nginx_install {
   sudo mkdir nginx-1.12.2
 
   sudo tar zxvf nginx-1.12.2.tar.gz
-
+  
+  wget https://github.com/yaoweibin/nginx_upstream_check_module/archive/master.zip
+  
+  sudo tar zxvf master.zip
+  
   cur_dir="$pwd"
 
   cd nginx-1.12.2
+  
+  patch -p1 < ../nginx_upstream_check_module-master/check_1.12.1+.patch
 
-  ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module
+  ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module --add-module=../nginx_upstream_check_module-master
   make && make install
 
   # When the installation process is finished you have to create Nginx symlinks:
