@@ -196,6 +196,35 @@ function nginx_install {
 }
 
 ###########################################################
+# Python3(pip3)
+###########################################################
+
+function python3_install {
+
+    # Install dependencies
+    sudo yum install -y gcc-c++
+    sudo yum install -y pcre pcre-devel
+    sudo yum install -y zlib zlib-devel
+    sudo yum install -y openssl openssl--devel
+    
+    # Download
+    sudo mkdir /usr/local/python3
+    wget --no-check-certificate https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
+    tar -xzvf Python-3.6.5.tgz
+    cd Python-3.6.5
+    
+    # Install
+    sudo ./configure --prefix=/usr/local/python3
+    sudo make
+    sudo make install
+    
+    # Create soft link
+    sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+    sudo ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+
+}
+
+###########################################################
 # Redis
 # reference https://linode.com/docs/databases/redis/install-and-configure-redis-on-centos-7/
 ###########################################################
