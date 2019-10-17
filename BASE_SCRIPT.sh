@@ -214,14 +214,17 @@ function python3_install {
     tar -xzvf Python-3.7.3.tgz
     cd Python-3.7.3
     
+    # stop here and fix ssl issue for 3.7, what fuck
+    # https://joshspicer.com/python37-ssl-issue
+    
     # Install
-    sudo ./configure --prefix=/usr/local/python3
-    sudo make
-    sudo make install
+    # sudo ./configure --prefix=/usr/local/python3 --enable-optimizations 
+    # sudo make
+    # sudo make install
     
     # Create soft link
-    sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3
-    sudo ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+    # sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+    # sudo ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
 
 }
 
