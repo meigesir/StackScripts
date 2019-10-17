@@ -202,10 +202,11 @@ function nginx_install {
 function python3_install {
 
     # Install dependencies
-    sudo yum install -y gcc-c++
+    sudo yum install -y gcc gcc-c++
     sudo yum install -y pcre pcre-devel
     sudo yum install -y zlib zlib-devel
     sudo yum install -y openssl openssl--devel
+    sudo yum -y install libffi-devel
     
     # Download
     sudo mkdir /usr/local/python3
