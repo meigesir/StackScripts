@@ -9,5 +9,3 @@ Java 环境的配置
 * nginx: 1.12.2
 
 Redis 环境的配置
-
-Python(3.7) 环境的配置
