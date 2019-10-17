@@ -209,9 +209,9 @@ function python3_install {
     
     # Download
     sudo mkdir /usr/local/python3
-    wget --no-check-certificate https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
-    tar -xzvf Python-3.6.5.tgz
-    cd Python-3.6.5
+    wget --no-check-certificate https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+    tar -xzvf Python-3.7.0.tgz
+    cd Python-3.7.0
     
     # Install
     sudo ./configure --prefix=/usr/local/python3
