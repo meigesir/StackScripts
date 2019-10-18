@@ -124,6 +124,9 @@ function mysql_grant_user {
 
 function java_install {
   yes y | yum install -y java-1.8.0-openjdk
+  
+  # install jdk devel, so jps can use
+  yum -y install java-1.8.0-openjdk-devel.x86_64
 }
 
 ###########################################################
