@@ -7,5 +7,6 @@ Java 环境的配置
 * tomcat: 8.5.24
 * mysql: mysql-community-release-el7-5
 * nginx: 1.12.2
+* maven: 3.6.2
 
 Redis 环境的配置
