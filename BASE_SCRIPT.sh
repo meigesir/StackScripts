@@ -130,6 +130,25 @@ function java_install {
 }
 
 ###########################################################
+# maven
+# reference http://maven.apache.org/download.cgi
+###########################################################
+
+function maven_install {
+  wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
+  
+  sudo mkdir /opt/apache-maven-3.6.2
+  
+  sudo tar xvf apache-maven-3.6.2-bin.tar.gz -C /opt/apache-maven-3.6.2 --strip-components=1
+  
+  echo 'MAVEN_HOME=/opt/apache-maven-3.6.2' >> ~/.bash_profile 
+  echo 'export MAVEN_HOME' >> ~/.bash_profile  
+  echo 'PATH=$PATH:$MAVEN_HOME/bin' >> ~/.bash_profile
+  echo 'export PATH' >> ~/.bash_profile
+  source ~/.bash_profile
+}
+
+###########################################################
 # Tomcat
 # reference https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-centos-7
 ###########################################################
