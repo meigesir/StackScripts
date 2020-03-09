@@ -248,3 +248,17 @@ EOT
   ## sudo systemctl start redis
 
 }
+
+###########################################################
+# Gradle 4.5.1
+# reference https://www.jianshu.com/p/9d31b202e5ea
+###########################################################
+
+function gradle_install {
+    wget https://downloads.gradle-dn.com/distributions/gradle-4.5.1-all.zip
+    mkdir /opt/gradle 
+    unzip -d /opt/gradle gradle-4.5.1-bin.zip
+    echo 'PATH=$PATH:/opt/gradle/gradle-4.5.1/bin' >> /etc/profile
+    echo 'export PATH' >> /etc/profile
+    source /etc/profile
+}
