@@ -257,7 +257,7 @@ EOT
 function gradle_install {
     wget https://downloads.gradle-dn.com/distributions/gradle-4.5.1-all.zip
     mkdir /opt/gradle 
-    unzip -d /opt/gradle gradle-4.5.1-bin.zip
+    unzip -d /opt/gradle gradle-4.5.1-all.zip
     echo 'PATH=$PATH:/opt/gradle/gradle-4.5.1/bin' >> /etc/profile
     echo 'export PATH' >> /etc/profile
     source /etc/profile
