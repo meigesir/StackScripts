@@ -135,13 +135,13 @@ function java_install {
 ###########################################################
 
 function maven_install {
-  wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
+  wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
   
-  sudo mkdir /opt/apache-maven-3.6.2
+  sudo mkdir /opt/apache-maven-3.6.3
   
-  sudo tar xvf apache-maven-3.6.2-bin.tar.gz -C /opt/apache-maven-3.6.2 --strip-components=1
+  sudo tar xvf apache-maven-3.6.3-bin.tar.gz -C /opt/apache-maven-3.6.3 --strip-components=1
   
-  echo 'MAVEN_HOME=/opt/apache-maven-3.6.2' >> ~/.bash_profile 
+  echo 'MAVEN_HOME=/opt/apache-maven-3.6.3' >> ~/.bash_profile 
   echo 'export MAVEN_HOME' >> ~/.bash_profile  
   echo 'PATH=$PATH:$MAVEN_HOME/bin' >> ~/.bash_profile
   echo 'export PATH' >> ~/.bash_profile
