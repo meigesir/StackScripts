@@ -250,15 +250,15 @@ EOT
 }
 
 ###########################################################
-# Gradle 4.5.1
+# Gradle 6.9.3
 # reference https://www.jianshu.com/p/9d31b202e5ea
 ###########################################################
 
 function gradle_install {
-    wget https://downloads.gradle-dn.com/distributions/gradle-4.5.1-all.zip
+    wget https://services.gradle.org/distributions/gradle-6.9.3-all.zip
     mkdir /opt/gradle 
-    unzip -d /opt/gradle gradle-4.5.1-all.zip
-    echo 'PATH=$PATH:/opt/gradle/gradle-4.5.1/bin' >> /etc/profile
+    unzip -d /opt/gradle gradle-6.9.3-all.zip
+    echo 'PATH=$PATH:/opt/gradle/gradle-6.9.3/bin' >> /etc/profile
     echo 'export PATH' >> /etc/profile
     source /etc/profile
 }
