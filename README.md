@@ -8,6 +8,6 @@ Java 环境的配置
 * mysql: mysql-community-release-el7-5
 * nginx: 1.12.2
 * maven: 3.6.2
-* gradle: 4.5.1
+* gradle: 6.9.3
 
 Redis 环境的配置
